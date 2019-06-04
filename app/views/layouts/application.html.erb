@@ -11,8 +11,8 @@
 
   <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <%= link_to "Inicio", todos_path, class:'navbar-brand'%>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,10 +22,7 @@
             <%= link_to "Nuevo", todos_new_path, class:'nav-link'%>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+          <%= link_to "Lista de tareas", todos_list_path, class:'nav-link'%>
           </li>
         </ul>
       </div>
