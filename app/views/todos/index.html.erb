@@ -1,11 +1,29 @@
-<h1>Indice</h1>
+<h1 class="text-center">Tu registro de tareas</h1>
 
-<% @todos.each_slice(3) do |todos|%>
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+    <% @todos.each_slice(3) do |todos|%>
+        <div class= "row">
+            <% todos.each do |todo| %>
+                <div class= "'text-center col-md-4 mx-auto my-3'">
+                    <div class="card mt-5" style="width: 18rem;">
+                        <div class="card-body">
+                            <% if todo.completed %>
+                                <h5 class="card-title">Tarea completada</h5>
+                            <% else %>
+                                <h5 class="card-title">Tarea pendiente</h5>
+                            <% end %>
+                            <p class="card-text"><%=todo.description%></p>
+                            <div class="text-center">
+                             <%= link_to  "Marcar como completada", complete_todo_path(todo), class: 'btn btn-primary' %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         </div>
+    <% end %>
+
+    <div class="text-center mt-5">
+        <%= link_to  "Nueva tarea", todos_new_path, class: 'btn btn-secondary' %>
     </div>
-<% end %>
+</div>
