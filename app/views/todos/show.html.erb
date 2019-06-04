@@ -1,0 +1,20 @@
+<div class="container">
+
+    <h1 class="text-center">Tarea</h1>
+
+    <div class= "'text-center col-md-4 mx-auto my-3'">
+        <div class="card mt-5" style="width: 18rem;">
+            <div class="card-body">
+                <% if @todo.completed %>
+                    <h5 class="card-title text-center", style="color: green;">Tarea completada</h5>
+                <% else %>
+                    <h5 class="card-title text-center", style="color: red;">Tarea pendiente</h5>
+                <% end %>
+                <p class="card-text text-center"><%=@todo.description%></p>
+                <div class="text-center">
+                    <%= link_to  "Marcar como completada", complete_todo_path(@todo), class: 'btn btn-primary' %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
