@@ -1,0 +1,14 @@
+<h1 class= "text-center">Nuevo To Do</h1>
+
+ <div class='container mt-5'>
+    <%= form_with(model: @todo, local: true) do |f| %>
+    <div class= "form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description, class:'form-control' %>
+    </div>
+    </div>
+        <%= f.check_box :completed %><%= f.label :completed, 'Completado'%>
+    <div>
+        <%= f.submit 'Crear'%>
+    <%end%>
+</div>
